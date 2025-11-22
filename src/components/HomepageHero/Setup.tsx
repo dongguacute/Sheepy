@@ -1,6 +1,7 @@
 'use client'
 
 import clsx from 'clsx'
+import Image from 'next/image'
 import Link from 'next/link'
 import styles from '@/components/HomepageHero/SetupHero.module.css'
 import { MotionWrapperFlash } from '@/components/MotionWrapper/Flash'
@@ -17,102 +18,50 @@ export function SetupHero(props: Props) {
   return (
     <div className={styles.container}>
       <div className={styles.content}>
-        <div className={styles.badgeContainer}>
-          <a
-            className={styles.badge}
-            href="https://github.com/pdsuwwz/nextjs-nextra-starter"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {t('badgeTitle')}
-          </a>
-        </div>
-        <h1 className={styles.headline}>
-          <MotionWrapperFlash
-            disabledAnimation={false}
-            className="flex items-center"
-          >
-            <span className="icon-[emojione-v1--lightning-mood]"></span>
+        {/* Large logo in center */}
+        <div className="flex justify-center mb-12">
+          <MotionWrapperFlash disabledAnimation={false}>
+            <Image
+              src="/img/logo.png"
+              alt="Sheepy Logo"
+              width={250}
+              height={250}
+              className="rounded-2xl shadow-2xl"
+            />
           </MotionWrapperFlash>
-          {' '}
-          Nextra
-          {' '}
-          <br className="sm:hidden"></br>
-          {' '}
-          Starter
-          <br className="sm:hidden"></br>
-          {' '}
-          Template
+        </div>
+
+        <h1 className={clsx(styles.headline, 'text-center')}>
+          <div className="flex items-center justify-center mb-4">
+            <span className="icon-[emojione-v1--sleeping-face] text-4xl mr-2"></span>
+            <span className="text-black dark:text-white">安心睡觉</span>
+          </div>
+          <br />
+          <span className="text-xl font-light text-neutral-600 dark:text-neutral-400">
+            Sleep Peacefully
+          </span>
         </h1>
-
-        <Link
-          href={`/${currentLocale}/upgrade`}
-          className={clsx([
-            'bg-linear-to-r from-yellow-400 via-orange-500 to-red-500 text-white shadow-lg',
-            'dark:bg-linear-to-r dark:from-green-400 dark:via-teal-500 dark:to-cyan-500 dark:text-white',
-            'text-sm mt-2 inline-block px-3 py-1 rounded-lg',
-            '[&>span]:font-bold',
-            'animate-pulse',
-            '[animation-duration:2s]',
-          ])}
-          dangerouslySetInnerHTML={{
-            __html: t('featureSupport', {
-              feature: `<span>Tailwind CSS v4, Nextra v4</span>`,
-            }),
-          }}
-        />
-
 
         <div className={clsx([
           styles.subtitle,
-          'text-neutral-500 dark:text-neutral-300',
+          'text-neutral-500 dark:text-neutral-300 text-center max-w-2xl mx-auto',
         ])}
         >
-          Template made
+          享受
           {' '}
           <FlipWords
             words={[
-              'Fast',
-              'Simple',
-              'Modern',
-              'Flexible',
-              'Easy',
-              'Functional',
-              'Efficient',
-              'Scalable',
-              'Reusable',
+              '宁静',
+              '舒适',
+              '放松',
+              '安眠',
             ]}
           />
-          <br />
-          With
           {' '}
-          <LinkPreview
-            url="https://nextjs.org"
-          >
-            Next.js
-          </LinkPreview>
-          ,
-          {' '}
-          <LinkPreview
-            url="https://tailwindcss.com"
-          >
-            Tailwind CSS
-          </LinkPreview>
-          , and
-          {' '}
-          <LinkPreview
-            url="https://ui.shadcn.com"
-          >
-            Shadcn UI
-          </LinkPreview>
-          {', '}
-          <LinkPreview
-            url="https://ui.aceternity.com"
-          >
-            Aceternity UI
-          </LinkPreview>
+          的睡眠体验
         </div>
-        <div className="flex justify-center pt-10">
+
+        <div className="flex justify-center pt-8">
           <div className="max-w-[500px] flex flex-wrap gap-[20px] max-sm:justify-center">
             <Button
               asChild
@@ -122,7 +71,7 @@ export function SetupHero(props: Props) {
               <Link
                 href={`/${currentLocale}/introduction`}
               >
-                {t('getStarted')}
+                开始体验
                 <span className="w-[20px] translate-x-[6px] transition-all group-hover:translate-x-[10px] icon-[mingcute--arrow-right-fill]"></span>
               </Link>
             </Button>
@@ -136,7 +85,7 @@ export function SetupHero(props: Props) {
                 href="https://github.com/pdsuwwz/nextjs-nextra-starter"
                 target="_blank"
               >
-                Github
+                查看源码
                 <span className="ml-[6px] icon-[mingcute--github-line]"></span>
               </Link>
             </Button>
