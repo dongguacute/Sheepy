@@ -6,6 +6,12 @@ export const generateStaticParams = generateStaticParamsFor('mdxPath')
 export async function generateMetadata(props: PageProps) {
   const params = await props.params
   const { metadata } = await importPage(params.mdxPath, params.lang)
+
+  // Add site title suffix to page title
+  if (metadata.title) {
+    metadata.title = `${metadata.title} - Sheepy`
+  }
+
   return metadata
 }
 

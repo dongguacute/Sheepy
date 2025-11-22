@@ -1,5 +1,5 @@
 export default {
-  systemTitle: '欢迎来到Sheepy',
+  systemTitle: 'Sheepy',
   pageTitle: '当前页面',
   backToTop: '返回顶部',
 

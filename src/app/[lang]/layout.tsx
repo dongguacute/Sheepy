@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-
+import Image from 'next/image'
 
 import type { I18nLangAsyncProps, I18nLangKeys } from '@/i18n'
 import { GoogleAnalytics } from '@next/third-parties/google'
@@ -20,7 +20,7 @@ export const metadata = {
   // Define your metadata here
   // For more information on metadata API, see: https://nextjs.org/docs/app/building-your-application/optimizing/metadata
   metadataBase: new URL('https://nextjs-nextra-starter-green.vercel.app'),
-  icons: '/img/favicon.svg',
+  icons: '/img/logo.png',
 } satisfies Metadata
 
 const repo = 'https://github.com/pdsuwwz/nextjs-nextra-starter'
@@ -30,7 +30,10 @@ const CustomNavbar = async ({ lang }: I18nLangAsyncProps) => {
   return (
     <Navbar
       logo={(
-        <span>{ t('systemTitle') }</span>
+        <div className="flex items-center gap-2">
+          <Image src="/img/logo.png" alt={t('systemTitle')} width={32} height={32} />
+          <span className="font-bold">{t('systemTitle')}</span>
+        </div>
       )}
       logoLink={`/${lang}`}
       projectLink={repo}
@@ -94,8 +97,8 @@ export default async function RootLayout({ children, params }: LayoutProps<'/[la
       <Head
       // ... Your additional head options
       >
-        {/* <title>{asPath !== '/' ? `${normalizePagesResult.title} - ${title}` : title}</title> */}
-        <meta property="og:title" content={title} />
+        <title>{t('systemTitle')}</title>
+        <meta property="og:title" content={t('systemTitle')} />
         <meta name="description" content={description} />
         <meta property="og:description" content={description} />
         <link rel="canonical" href={repo} />

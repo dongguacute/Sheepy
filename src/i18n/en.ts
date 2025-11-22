@@ -1,5 +1,5 @@
 export default {
-  systemTitle: 'Welcome to Sheepy',
+  systemTitle: 'Sheepy',
   pageTitle: 'On This Page',
   backToTop: 'Back to top',
 
