@@ -24,13 +24,4 @@ export default {
     title: '📦 示例代码',
     type: 'page',
   },
-  upgrade: {
-    title: (
-      <span className="flex items-center leading-[1]">
-        新变化
-        <TitleBadge />
-      </span>
-    ),
-    type: 'page',
-  },
 } satisfies MetaRecord

@@ -21,32 +21,6 @@ export default function LocaleToggle({
   const router = useRouter()
   const pathname = usePathname()
 
-  const forceHideBanner = useCallback(() => {
-    const banner = document.querySelector('.nextra-banner')
-    if (!banner) {
-      return
-    }
-
-    const isBannerDismissed = localStorage.getItem('starter-banner')
-    if (isBannerDismissed) {
-      banner.classList.add('x:hidden')
-    }
-  }, [])
-
-  useEffect(() => {
-    const observer = new MutationObserver((mutations) => {
-      mutations.forEach(() => {
-        forceHideBanner()
-      })
-    })
-
-    observer.observe(document.body, {
-      childList: true,
-      subtree: true,
-    })
-    forceHideBanner()
-    return () => observer.disconnect()
-  }, [forceHideBanner])
 
   const changeLocale = useCallback(() => {
     // 滚动条位置记录

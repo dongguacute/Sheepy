@@ -5,7 +5,7 @@ import type { I18nLangAsyncProps, I18nLangKeys } from '@/i18n'
 import { GoogleAnalytics } from '@next/third-parties/google'
 import Script from 'next/script'
 import { Footer, LastUpdated, Layout, Navbar } from 'nextra-theme-docs'
-import { Banner, Head, Search } from 'nextra/components'
+import { Head, Search } from 'nextra/components'
 import { getPageMap } from 'nextra/page-map'
 import { CustomFooter } from '@/components/CustomFooter'
 import { useServerLocale } from '@/hooks'
@@ -24,28 +24,6 @@ export const metadata = {
 } satisfies Metadata
 
 const repo = 'https://github.com/pdsuwwz/nextjs-nextra-starter'
-
-const CustomBanner = async ({ lang }: I18nLangAsyncProps) => {
-  const { t } = await useServerLocale(lang)
-  return (
-    <Banner
-      storageKey="starter-banner"
-    >
-      <div className="flex justify-center items-center gap-1">
-        { t('banner.title') }
-        {' '}
-        <a
-          className="max-sm:hidden text-warning hover:underline"
-          target="_blank"
-          href={repo}
-        >
-          { t('banner.more') }
-        </a>
-      </div>
-    </Banner>
-  )
-}
-
 
 const CustomNavbar = async ({ lang }: I18nLangAsyncProps) => {
   const { t } = await useServerLocale(lang)
@@ -132,9 +110,6 @@ export default async function RootLayout({ children, params }: LayoutProps<'/[la
         >
           <Layout
             copyPageButton={false}
-            banner={
-              <CustomBanner lang={lang} />
-            }
             navbar={
               <CustomNavbar lang={lang} />
             }
