@@ -1,17 +1,17 @@
 {
-  "name": "nextjs-nextra-starter",
+  "name": "sheepy",
   "type": "module",
   "version": "0.0.1",
-  "description": "Next.js Nextra (v4) Tailwind CSS (v4) docs starter",
-  "author": "Wisdom <pdsu.wwz@foxmail.com>",
+  "description": "Sheepy is a simple, structured documentation that teaches you how to sleep better. It focuses on clear explanations ✨, practical techniques 🛌, and easy-to-follow steps 📘 — no apps, no accounts, just knowledge",
+  "author": "Cherry Fu <me@dgct.cc>",
   "license": "MIT",
-  "homepage": "https://github.com/pdsuwwz/nextjs-nextra-starter#readme",
+  "homepage": "https://github.com/dongguacute/Sheepy",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pdsuwwz/nextjs-nextra-starter.git"
+    "url": "git+https://github.com/dongguacute/Sheepy.git"
   },
   "bugs": {
-    "url": "https://github.com/pdsuwwz/nextjs-nextra-starter/issues"
+    "url": "https://github.com/dongguacute/Sheepy/issues"
   },
   "engines": {
     "node": ">=20.x",
