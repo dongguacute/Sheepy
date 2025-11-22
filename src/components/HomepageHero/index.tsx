@@ -35,111 +35,46 @@ export const StackItem = ({
 export default function HomepageHero() {
   const { t } = useLocale()
 
-  const featureList = t('featureList')
-  const faqs = t('faqs')
+  const sleepGuides = t('sleepGuides')
 
   const { resolvedTheme } = useTheme()
 
-  const processedFeatureList = useMemo(() => {
+  const processedSleepGuides = useMemo(() => {
     const icons = [
-      'icon-[material-symbols--rocket-launch-outline]',
-      'icon-[icon-park-outline--international]',
-      'icon-[nonicons--typescript-16]',
-      'icon-[carbon--face-satisfied] hover:icon-[carbon--face-wink]',
-      'icon-[teenyicons--tailwind-outline]',
-      'icon-[tabler--calendar-code]',
-      'icon-[carbon--color-palette]',
-      'icon-[carbon--ibm-cloud-transit-gateway]',
-      'icon-[carbon--flash]',
+      '🌙',
+      '🛏️',
+      '⏰',
+      '🧠',
+      '🥗',
+      '🏃‍♂️',
     ]
-    return featureList.map((item, index) => {
+    return sleepGuides.map((item, index) => {
       return {
         ...item,
-        icon: <span className={icons[index] || icons[0]}></span>,
+        icon: icons[index] || icons[0],
       }
     })
-  }, [featureList])
+  }, [sleepGuides])
 
   return (
     <>
-      <ScrollProgressBar />
-      <PanelParticles />
       <SetupHero />
-      {/* <div className="relative top-[-18px] mb-[-10px] flex justify-center py-[0px] z-2">
-        <a
-          href="https://nextjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="w-[150px] h-[40px] flex flex-col items-center gap-[20px]"
-        >
-          <img
-            className="dark:invert"
-            src="/next.svg"
-            style={{ width: '100%', height: 'auto' }}
-          />
-        </a>
-      </div> */}
       <div className="relative z-1 pb-10 md:pb-[100px]">
         <Section
-          title="Tech Stack"
-          titleProps={{
-            disabledAnimation: false,
-          }}
-        >
-          <div className="flex justify-center w-full max-w-7xl h-[80px] my-[30px]">
-            <Marquee
-              pauseOnHover
-              autoFill
-              gradient
-              direction="right"
-              gradientColor="var(--background)"
-              speed={60}
-            >
-              <StackItem className="icon-[akar-icons--nextjs-fill]" />
-              <StackItem className="icon-[simple-icons--react]" />
-              <StackItem className="icon-[simple-icons--tailwindcss]" />
-              <StackItem className="icon-[teenyicons--framer-outline]" />
-              <StackItem className="icon-[simple-icons--shadcnui]" />
-              <StackItem className="icon-[simple-icons--typescript]" />
-              <StackItem className="icon-[fa6-brands--sass]" />
-              <StackItem className="icon-[teenyicons--eslint-outline]" />
-              <StackItem className="icon-[simple-icons--postcss]" />
-              <StackItem className="icon-[simple-icons--nextra]" />
-              <StackItem className="icon-[line-md--iconify1]" />
-            </Marquee>
-          </div>
-        </Section>
-        <Section
-          title="Features"
+          title={t('featuresDesc')}
           description={t('featuresDesc')}
         >
           <div className="flex justify-center w-full max-w-7xl">
-            <HoverEffect items={processedFeatureList} />
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl">
+              {processedSleepGuides.map((guide, index) => (
+                <div key={index} className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                  <div className="text-4xl mb-4">{guide.icon}</div>
+                  <h3 className="text-xl font-semibold mb-2 text-gray-800 dark:text-white">{guide.title}</h3>
+                  <p className="text-gray-600 dark:text-gray-300">{guide.description}</p>
+                </div>
+              ))}
+            </div>
           </div>
-        </Section>
-        <Section
-          title="Frequently Asked Questions"
-          tallPaddingY
-        >
-          <Accordion
-            type="single"
-            collapsible
-            className="w-full max-w-5xl"
-          >
-            {
-              faqs.map((faqItem, index) => (
-                <AccordionItem
-                  value={faqItem.question}
-                  key={index}
-                >
-                  <AccordionTrigger>{faqItem.question}</AccordionTrigger>
-                  <AccordionContent>
-                    {faqItem.answer}
-                  </AccordionContent>
-                </AccordionItem>
-              ))
-            }
-          </Accordion>
         </Section>
       </div>
     </>

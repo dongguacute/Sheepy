@@ -14,7 +14,13 @@ export default {
   featureSupport: `🔥 Now with {{feature}} support!`,
   lastUpdated: 'Last updated on:',
 
-  getStarted: 'Get Started',
+  getStarted: 'Start Experience',
+  viewSource: 'View Source',
+  mainTitle: 'Sleep Peacefully',
+  subTitle: 'Sleep Peacefully',
+  enjoyText: 'Enjoy',
+  sleepExperience: 'sleep experience',
+  sleepWords: ['Peaceful', 'Comfortable', 'Relaxed', 'Sleep'],
 
   themeSwitcher: {
     light: 'Light Mode',
@@ -23,45 +29,33 @@ export default {
     darkAria: 'Switch to dark mode',
   },
 
-  featureList: [
+  sleepGuides: [
     {
-      title: 'Advanced Tech Stack',
-      description: 'Leveraging efficient React (v19) and support with Next.js, Nextra(v4) and Shadcn UI to build modern applications.',
+      title: 'Sleep Cycles',
+      description: 'Understand REM and non-REM sleep stages, master optimal sleep duration.',
     },
     {
-      title: 'internationalization (i18n)',
-      description: 'Built-in multi-language support for easy i18n of your application, expanding your user base.',
+      title: 'Sleep Environment',
+      description: 'Learn how to create the perfect sleep environment: temperature, lighting, noise control.',
     },
     {
-      title: 'TypeScript Safety',
-      description: 'Fully integrated with TypeScript, offering static type checking to reduce runtime errors and enhance code reliability and maintainability.',
+      title: 'Sleep Routine',
+      description: 'Establish healthy sleep habits, regular sleep schedules are crucial for physical health.',
     },
     {
-      title: 'Iconify Icons',
-      description: 'Integrated with the Iconify icon set, offering a wide range of icons to enhance UI visual presentation.',
+      title: 'Relaxation Techniques',
+      description: 'Master meditation, deep breathing and other relaxation techniques to help fall asleep quickly.',
     },
     {
-      title: 'Tailwind CSS (v4)',
-      description: 'Atomic CSS integrated with Tailwind CSS, enabling efficient design and responsive UI.',
+      title: 'Diet and Sleep',
+      description: 'Learn which foods promote sleep and which foods should be avoided.',
     },
     {
-      title: 'Code Standards',
-      description: 'Adheres to best practices with code standards and uses ESLint for quality checks and consistency.',
-    },
-    {
-      title: 'Dark Mode',
-      description: 'Supports dark mode for an enhanced nighttime experience.',
-    },
-    {
-      title: 'Rich Components & Extensible Support',
-      description: 'Offers a range of built-in components and supports flexible custom extensions.',
-    },
-    {
-      title: 'Lightweight Design',
-      description: 'Employs a lightweight design approach, streamlining project setup to focus on content creation.',
+      title: 'Exercise Recommendations',
+      description: 'How moderate exercise improves sleep quality, and when to exercise.',
     },
   ],
-  featuresDesc: 'Easily build modern applications and kickstart your development process.',
+  featuresDesc: 'Learn scientific sleep knowledge and improve sleep quality.',
   faqs: [
     {
       question: 'What frameworks and tech stack does this starter template support?',

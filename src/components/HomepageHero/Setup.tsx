@@ -34,11 +34,11 @@ export function SetupHero(props: Props) {
         <h1 className={clsx(styles.headline, 'text-center')}>
           <div className="flex items-center justify-center mb-4">
             <span className="icon-[emojione-v1--sleeping-face] text-4xl mr-2"></span>
-            <span className="text-black dark:text-white">安心睡觉</span>
+            <span className="text-black dark:text-white">{t('mainTitle')}</span>
           </div>
           <br />
           <span className="text-xl font-light text-neutral-600 dark:text-neutral-400">
-            Sleep Peacefully
+            {t('subTitle')}
           </span>
         </h1>
 
@@ -47,18 +47,13 @@ export function SetupHero(props: Props) {
           'text-neutral-500 dark:text-neutral-300 text-center max-w-2xl mx-auto',
         ])}
         >
-          享受
+          {t('enjoyText')}
           {' '}
           <FlipWords
-            words={[
-              '宁静',
-              '舒适',
-              '放松',
-              '安眠',
-            ]}
+            words={t('sleepWords')}
           />
           {' '}
-          的睡眠体验
+          {t('sleepExperience')}
         </div>
 
         <div className="flex justify-center pt-8">
@@ -71,7 +66,7 @@ export function SetupHero(props: Props) {
               <Link
                 href={`/${currentLocale}/introduction`}
               >
-                开始体验
+                {t('getStarted')}
                 <span className="w-[20px] translate-x-[6px] transition-all group-hover:translate-x-[10px] icon-[mingcute--arrow-right-fill]"></span>
               </Link>
             </Button>
@@ -85,7 +80,7 @@ export function SetupHero(props: Props) {
                 href="https://github.com/dongguacute/Sheepy"
                 target="_blank"
               >
-                查看源码
+                {t('viewSource')}
                 <span className="ml-[6px] icon-[mingcute--github-line]"></span>
               </Link>
             </Button>
