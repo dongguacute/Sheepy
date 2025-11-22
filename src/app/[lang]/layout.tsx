@@ -23,7 +23,7 @@ export const metadata = {
   icons: '/img/logo.png',
 } satisfies Metadata
 
-const repo = 'https://github.com/pdsuwwz/nextjs-nextra-starter'
+const repo = 'https://github.com/dongguacute/Sheepy'
 
 const CustomNavbar = async ({ lang }: I18nLangAsyncProps) => {
   const { t } = await useServerLocale(lang)
@@ -122,7 +122,7 @@ export default async function RootLayout({ children, params }: LayoutProps<'/[la
               </LastUpdated>
             )}
             editLink={null}
-            docsRepositoryBase="https://github.com/pdsuwwz/nextjs-nextra-starter"
+            docsRepositoryBase="https://github.com/dongguacute/Sheepy"
             footer={(
               <Footer className="bg-background py-5!">
                 <CustomFooter />
